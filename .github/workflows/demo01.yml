@@ -3,6 +3,13 @@ on:
   pull_request:
     types:
       - opened
+  push:
+    branches:
+      - main
+      - dev*
+      - release/**
+    paths-ignore:
+      - '.github'
 jobs:
   Lint_Code:
     runs-on: ubuntu-latest
