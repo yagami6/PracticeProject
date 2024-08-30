@@ -1,0 +1,17 @@
+name: Events demo
+on: push
+jobs:
+  Lint_Code:
+    runs-on: ubuntu-latest
+    environment: Dev
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Test
+        run: npm run test
+      - name: Build
+        run: npm run build
