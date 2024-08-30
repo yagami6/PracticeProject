@@ -3,6 +3,7 @@ on: push
 jobs:
   Lint_Code:
     runs-on: ubuntu-latest
+    environment: Dev
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
