@@ -1,5 +1,8 @@
 name: Events demo
-on: push
+on: 
+  pull_request:
+    types:
+      - opened
 jobs:
   Lint_Code:
     runs-on: ubuntu-latest
