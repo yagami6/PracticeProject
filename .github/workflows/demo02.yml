@@ -1,4 +1,4 @@
-name: Events demo
+name: Deploy website
 on: push
 jobs:
   Lint_Code:
@@ -13,5 +13,19 @@ jobs:
         run: npm run lint
       - name: Test
         run: npm run test
+  Build_Code:
+    runs-on: ubuntu-latest
+    environment: Dev
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm ci
       - name: Build
         run: npm run build
+  Deploy_Code:
+    runs-on: ubuntu-latest
+    environment: Dev
+    steps:
+      - name: Deploy
+        run: echo "Deploying..."
