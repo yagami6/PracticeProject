@@ -14,7 +14,6 @@ jobs:
         run: npm run test
   Build_Code:
     runs-on: ubuntu-latest
-    environment: Dev
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -24,7 +23,6 @@ jobs:
         run: npm run build
   Deploy_Code:
     runs-on: ubuntu-latest
-    environment: Dev
     steps:
       - name: Deploy
         run: echo "Deploying..."
